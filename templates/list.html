@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="utf-8" http-equiv="encoding">
+        <script>
+            function myEnterFunction() {
+                element = document.getElementById("demo");
+                element.style.backgroundColor = "{{ color }}";
+            }
+        </script>
+    </head>
+    <body>
+        <p>Here is the result of votes<p>
+          <table>
+              {% for row in candidats %}
+            <tr>
+               <td>{{ row.prenom }}</td>
+               <td>{{ row.nom }}</td>
+	          
+	       <td> <form method="post" action="resultat"><input  name="{{ row.id }}" class='myclass' type='submit' value="{{range(1,10) | random}}"/> </form></td>
+            </tr>          
+            {% endfor %}
+         </table>
+    </body>
+</html>
